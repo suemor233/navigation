@@ -1,0 +1,14 @@
+@import './theme.scss';
+
+@layer base {
+  .overflow-overlay {
+    @apply overflow-auto;
+
+    overflow: overlay;
+  }
+}
+
+.ease-linear {
+  animation-timing-function: steps(60) !important;
+  transition-timing-function: steps(60) !important;
+}
