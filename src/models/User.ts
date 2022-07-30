@@ -7,10 +7,11 @@ export interface UserModel extends BaseModel  {
   mail:string,
   url:string,
   backgroundImage:string
-  socialIds: SocialType[]
+  socialIds: Record<'middle' | 'bottom', SocialType[]>
 }
 
-interface SocialType {
+export interface SocialType {
   key:string,
-  value:string
+  value:string,
+  icon:string
 }

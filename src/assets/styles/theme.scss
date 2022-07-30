@@ -10,7 +10,7 @@
   --light-font: #fff;
   --shallow: #eee;
   --pink: #eb445a;
-  --primary: var(--green);
+  --primary: var(--blue);
   --white: var(--light-font);
 
   --code-bg: transparent;
@@ -74,10 +74,7 @@ html.dark {
   }
 }
 
-*::selection {
-  background: var(--primary);
-  color: var(--white);
-}
+
 
 html {
   font: 14px/1.15 var(--sans-font);
@@ -92,7 +89,7 @@ html {
   scroll-behavior: unset;
   font-variant-numeric: tabular-nums;
   font-display: swap;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media (max-width: 799px) {

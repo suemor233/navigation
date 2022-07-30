@@ -21,6 +21,15 @@ const configs = withPlugins(plugins, {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  redirects:()=>{
+    return [
+      {
+        source: '/',
+        destination: '/about',
+        permanent: true      
+      },
+    ]
+  }
 })
 
 module.exports = configs

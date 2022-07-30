@@ -1,6 +1,5 @@
 import { BaseModel } from './Base';
 
-
 export interface BasicDataType extends BaseModel {
   key: string
   value: string

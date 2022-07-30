@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-
 export const ErrorView: NextPage<{
   noSeo?: boolean
   statusCode: number | string
