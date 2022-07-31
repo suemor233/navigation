@@ -12,6 +12,7 @@ specifiers:
   '@types/react-dom': 18.0.5
   animate.css: ^4.1.1
   axios: ^0.27.2
+  cross-env: '*'
   eslint: 8.20.0
   eslint-config-next: 12.2.2
   lodash-es: ^4.17.21
@@ -59,6 +60,7 @@ devDependencies:
   '@types/node': 18.0.6
   '@types/react': 17.0.45
   '@types/react-dom': 18.0.5
+  cross-env: 7.0.3
   eslint: 8.20.0
   eslint-config-next: 12.2.2_he2ccbldppg44uulnyq4rwocfa
   typescript: 4.7.4
@@ -1815,6 +1817,14 @@ packages:
       parse-json: 5.2.0
       path-type: 4.0.0
       yaml: 1.10.2
+    dev: true
+
+  /cross-env/7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
     dev: true
 
   /cross-spawn/7.0.3:
