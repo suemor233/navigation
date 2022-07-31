@@ -4,8 +4,6 @@ import { useStore } from '@/store'
 import { FC } from 'react'
 import { observer } from 'mobx-react-lite'
 import Icon from '~/components/universal/Icon'
-import { NextSeo } from 'next-seo'
-import { useInitialData } from '~/hooks/use-initial-data'
 
 const Left: FC = () => {
   const { userStore } = useStore()
@@ -46,7 +44,7 @@ const Left: FC = () => {
             </div>
           </div>
         </div>
-        <div className={styles['fg'] + ' md:hidden'} />
+        <div className={styles['fg'] + ' phone:hidden'} />
       </div>
     </>
   )

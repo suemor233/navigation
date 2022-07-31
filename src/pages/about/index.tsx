@@ -1,24 +1,32 @@
-import { observer } from 'mobx-react-lite'
 import { ReactElement } from 'react'
-
+import { observer } from 'mobx-react-lite'
 import { CardContent } from '~/components/layouts/BasicLayout/CardContent'
-import { Sidebar } from '~/components/layouts/SideBar'
+import { useStore } from '~/store'
+import AboutBasic from '~/components/in-page/About/about-basic'
+import AboutDetail from '~/components/in-page/About/about-detail'
+import { useEffect } from 'react';
 
 export const About = () => {
+  const { appStore,basicStore,detailStore } = useStore()
+  useEffect(()=>{
+    basicStore.updateabout()
+    detailStore.updateabout()
+  },[])
   return (
     <>
-      <h1>about</h1>
+      <div
+        className="pt-5 px-10 phone:px-1 animate__animated animate__fadeIn h-full"
+        style={!appStore.viewport.mobile ? { overflow: 'overlay' } : undefined}
+      >
+        {basicStore.basic && <AboutBasic aboutData={basicStore.basic} />}
+        {detailStore.detail && <AboutDetail detail={detailStore.detail} />}
+      </div>
     </>
   )
 }
 
 About.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <CardContent>
-      <Sidebar />
-      {page}
-    </CardContent>
-  )
+  return <CardContent>{page}</CardContent>
 }
 
-export default About
+export default observer(About)

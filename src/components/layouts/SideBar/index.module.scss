@@ -1,0 +1,31 @@
+.btn {
+  color: #696969;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  padding: 0.4em 2em;
+
+  @media  (max-width: 1007px) {
+    padding: 0.4em 1.5em;
+  }
+  @media  (max-width: 767px) {
+    padding: 0.4em .5em;
+  }
+  &:hover {
+    color: #000;
+  }
+}
+
+.selected {
+  background: rgba(0, 118, 255, 0.1);
+  color: #0070f3;
+  border-radius: 5px;
+  &:hover {
+    color: #0070f3;
+  }
+}
+
+.fg {
+  height: 1px;
+  background-color: #e5e5e5;
+  margin-top: 1em;
+}

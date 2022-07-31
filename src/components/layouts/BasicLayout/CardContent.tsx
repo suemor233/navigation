@@ -1,14 +1,14 @@
 import { observer } from 'mobx-react-lite'
 import { FC, useEffect } from 'react'
+
 import { useStore } from '~/store'
+
 import Left from '../Left'
+import Sidebar from '../SideBar'
 import styles from './index.module.scss'
 
 export const CardContent: FC = observer(({ children }) => {
   const { appStore } = useStore()
-  useEffect(()=>{
-      console.log('start');
-  },[])
   return (
     <>
       <div
@@ -20,8 +20,13 @@ export const CardContent: FC = observer(({ children }) => {
             : '')
         }
       >
-        <Left/>
-        {children}
+        <Left />
+        <div className="flex-1 flex flex-col px-5 h-full">
+          <div className="flex flex-col mt-6">
+            <Sidebar />
+          </div>
+          {children}
+        </div>
       </div>
     </>
   )

@@ -2,12 +2,13 @@ import { observer } from 'mobx-react-lite'
 import { FC } from 'react'
 
 import { useStore } from '~/store'
+import { isClientSide } from '~/utils/env'
 
-import { CardContent } from './CardContent'
+import { useInitialData } from '../../../hooks/use-initial-data'
 
 export const BasicLayout: FC = observer(({ children }) => {
-  const { appStore, userStore } = useStore()
-
+  const { appStore } = useStore()
+  const initData = useInitialData()
   return (
     <>
       <div
@@ -16,9 +17,7 @@ export const BasicLayout: FC = observer(({ children }) => {
         style={
           !appStore.viewport.mobile
             ? {
-                backgroundImage: `url(${
-                  userStore.master?.backgroundImage ?? ''
-                })`,
+                backgroundImage: `url(${initData.user.backgroundImage ?? ''})`,
               }
             : undefined
         }

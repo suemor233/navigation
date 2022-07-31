@@ -12,6 +12,7 @@ import { InitialContextProvider } from '~/context/initial-data'
 import { RootStoreProvider } from '~/context/root-store'
 import { AggregateRoot } from '~/models/aggregate'
 import { fetchInitialData } from '~/utils/app'
+import { NextUIProvider } from '@nextui-org/react'
 
 interface DataModel {
   initData: Record<'aggregateData', AggregateRoot>
@@ -28,6 +29,7 @@ const App: FC<DataModel & { Component: any; pageProps: any; err: any }> = (
       <NoDataErrorView />
     )
   }, [Component, initData, pageProps])
+
   return (
     <RootStoreProvider>
       <InitialContextProvider value={initData}>{Inner}</InitialContextProvider>
@@ -37,9 +39,11 @@ const App: FC<DataModel & { Component: any; pageProps: any; err: any }> = (
 
 const Wrapper = memo((props) => {
   return (
-    <BasicLayout>
-      <Content>{props.children}</Content>
-    </BasicLayout>
+    <NextUIProvider>
+      <BasicLayout>
+        <Content>{props.children}</Content>
+      </BasicLayout>
+    </NextUIProvider>
   )
 })
 
