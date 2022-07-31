@@ -13,6 +13,7 @@ class MyDocument extends Document {
   }
 
   render() {
+
     return (
       <Html lang="zh-cn">
         <Head>{CssBaseline.flush()}</Head>

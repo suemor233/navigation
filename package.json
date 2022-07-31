@@ -9,8 +9,12 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development next dev -p 2334",
     "build": "cross-env NODE_ENV=production next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "npm run dev",
+    "lint": "next lint",
+    "prod:pm2": "cross-env NODE_ENV=production pm2 restart ecosystem.config.js",
+    "prod:pm2-alone": "cross-env NODE_ENV=production pm2 restart ecosystem.standalone.config.js",
+    "prod:stop": "pm2 stop ecosystem.config.js",
+    "prod:reload": "pm2 reload ecosystem.config.js"
   },
   "dependencies": {
     "@nextui-org/react": "1.0.0-beta.7",
