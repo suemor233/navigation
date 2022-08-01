@@ -14,10 +14,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+      - name: Checkout LFS objects
+        run: git lfs checkout
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 16.x
 
       - name: Cache pnpm modules
         uses: actions/cache@v3
@@ -31,11 +36,17 @@ jobs:
 
       - uses: pnpm/action-setup@v2.2.2
         with:
-          version: latest
+          version: 7.x.x
           run_install: true
-      - name: Build project # This would actually build your project, using zip for an example artifact
+
+      - name: Build project
+        env:
+          ASSETPREFIX: ${{ secrets.ASSETPREFIX }}
+          NEXT_PUBLIC_APIURL: https://api.suemor.com/api/v2
+          NEXT_PUBLIC_GATEWAY_URL: https://api.suemor.com
         run: |
-          sh release.sh
+          sh standalone-build.sh
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -45,7 +56,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           draft: false
-          prerelease: false 
+          prerelease: false
       - run: npx changelogithub
         continue-on-error: true
         env:
@@ -58,5 +69,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           asset_path: ./release.zip
-          asset_name: release.zip
+          asset_name: release-ubuntu.zip
           asset_content_type: application/zip
