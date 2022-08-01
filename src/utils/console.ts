@@ -1,7 +1,7 @@
 export function printToConsole() {
   try {
     console.log(
-      '%c Suemor Navigation %c https://github.com/suemor233/Navigation ',
+      '%c Suemor Navigation %c https://github.com/suemor233/navigation-nextjs ',
       'color: #fff; margin: 1em 0; padding: 5px 0; background: #3498db;',
       'margin: 1em 0; padding: 5px 0; background: #efefef;',
     )

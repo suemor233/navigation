@@ -16,6 +16,7 @@ class MyDocument extends Document {
 
     return (
       <Html lang="zh-cn">
+       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <Head>{CssBaseline.flush()}</Head>
         <body>
           <script src="https://at.alicdn.com/t/font_3391495_6hi3rnhcf1p.js"></script>
