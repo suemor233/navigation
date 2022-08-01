@@ -19,18 +19,24 @@ export const Content: FC = observer((props) => {
   const { check: checkBrowser } = useCheckOldBrowser()
   useResizeScrollEvent()
   const { user } = initialData
-  userStore.setUser(user)
   useEffect(() => {
+    userStore.setUser(user)
     loadStyleSheet(
-      'https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@100;300;400;500&display=swap',
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css',
     )
+    import('../../socket/index').then(({ socketClient }) => {
+      socketClient.initIO()
+    })
     checkBrowser()
     printToConsole()
   }, [])
 
   return (
     <>
-      <NextSeo title={`${userStore.username} 引导页`} description={`${userStore.introduce}`} />
+      <NextSeo
+        title={`${userStore.username} 引导页`}
+        description={`${userStore.introduce}`}
+      />
       <div id="next">{props.children}</div>
     </>
   )

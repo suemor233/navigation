@@ -34,6 +34,7 @@
     "react-toastify": "^9.0.7",
     "remark-gfm": "^3.0.1",
     "sass": "^1.54.0",
+    "socket.io-client": "^4.5.1",
     "umi-request": "^1.4.0"
   },
   "devDependencies": {
@@ -42,11 +43,11 @@
     "@types/node": "18.0.6",
     "@types/react": "17.0.45",
     "@types/react-dom": "18.0.5",
+    "cross-env": "*",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.2",
     "typescript": "4.7.4",
     "windicss": "3.5.4",
-    "cross-env": "*",
     "windicss-webpack-plugin": "^1.7.4"
   },
   "resolutions": {

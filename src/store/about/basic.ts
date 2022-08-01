@@ -2,12 +2,14 @@ import { makeAutoObservable, runInAction } from 'mobx'
 
 import { BasicDataType } from '@/models/About'
 import { basicInfo } from '@/api/modules/about'
-
+import { socketClient } from '~/socket'
+import { SocketKey } from '~/constants/socketKey'
 export default class BasicStore {
   basic: BasicDataType[] | null = null
 
   constructor() {
     makeAutoObservable(this)
+    this.connectaboutSocket()
   }
 
   async updateabout() {
@@ -17,5 +19,11 @@ export default class BasicStore {
     })
   }
 
+
+  connectaboutSocket() {
+    socketClient.on(SocketKey.ABOUT_BASIC,'关于已更新', res => {
+      this.basic = res
+    })
+  }
 
 }

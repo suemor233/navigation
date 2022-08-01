@@ -1,9 +1,13 @@
 import 'windi.css'
 import 'assets/styles/main.scss'
 import 'animate.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 import { memo, useMemo } from 'react'
 import type { FC } from 'react'
+import { ToastContainer } from 'react-toastify'
+
+import { NextUIProvider } from '@nextui-org/react'
 
 import { Content } from '~/components/layouts/AppLayout'
 import { BasicLayout } from '~/components/layouts/BasicLayout'
@@ -12,7 +16,6 @@ import { InitialContextProvider } from '~/context/initial-data'
 import { RootStoreProvider } from '~/context/root-store'
 import { AggregateRoot } from '~/models/aggregate'
 import { fetchInitialData } from '~/utils/app'
-import { NextUIProvider } from '@nextui-org/react'
 
 interface DataModel {
   initData: Record<'aggregateData', AggregateRoot>
@@ -41,9 +44,10 @@ const Wrapper = memo((props) => {
   return (
     <NextUIProvider>
       <BasicLayout>
-        <Content>{props.children}</Content>
+          <Content>{props.children}</Content>
       </BasicLayout>
     </NextUIProvider>
+
   )
 })
 

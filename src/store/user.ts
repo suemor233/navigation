@@ -1,11 +1,14 @@
 import { makeAutoObservable, runInAction } from 'mobx'
 
 import { socialBottomKeyMap, socialKeyMap } from '~/constants/social'
+import { SocketKey } from '~/constants/socketKey'
 import {
   InformationConfigType,
   SocialDetailType,
 } from '~/models/InformationConfigType'
 import { SocialType, UserModel } from '~/models/User'
+import { socketClient } from '~/socket'
+import { notice } from '~/utils/notice'
 
 export interface UserResType
   extends Pick<
@@ -18,6 +21,7 @@ export interface UserResType
 export default class UserStore {
   constructor() {
     makeAutoObservable(this)
+    this.connectUserSocket()
   }
   master: Partial<UserModel> | null = null
   setUser(model: (Omit<UserModel,'socialIds'> & {socialIds:SocialType[]}) | any) {
@@ -40,6 +44,8 @@ export default class UserStore {
       this.master = model as any
       //@ts-ignore
       this.master.socialIds = socialIds as any
+
+      console.log(this.master);
     })
   }
 
@@ -49,5 +55,11 @@ export default class UserStore {
 
   get introduce() {
     return this.master?.introduce || null
+  }
+
+  connectUserSocket() {
+    socketClient.on(SocketKey.USER_UPDATE,'基本信息已更新', (res) => {
+      this.setUser(res)
+    })
   }
 }

@@ -1,5 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import { FC } from 'react'
+import { ToastContainer } from 'react-toastify'
 
 import { useStore } from '~/store'
 import { isClientSide } from '~/utils/env'
@@ -24,6 +25,7 @@ export const BasicLayout: FC = observer(({ children }) => {
       >
         {children}
       </div>
+      <ToastContainer/>
     </>
   )
 })
