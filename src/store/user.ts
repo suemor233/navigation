@@ -45,7 +45,6 @@ export default class UserStore {
       //@ts-ignore
       this.master.socialIds = socialIds as any
 
-      console.log(this.master);
     })
   }
 
