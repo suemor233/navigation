@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@suemor/eslint-config-react-ts'],
+  extends: ['@suemor/eslint-config-ts'],
   rules: {
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
