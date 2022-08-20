@@ -15,7 +15,7 @@ export const About = () => {
   return (
     <>
       <div
-        className="pt-5 px-10 phone:px-1 animate__animated animate__fadeIn h-full"
+        className="px-10 phone:px-1 animate__animated animate__fadeIn h-full"
         style={!appStore.viewport.mobile ? { overflow: 'overlay' } : undefined}
       >
         {basicStore.basic && <AboutBasic aboutData={basicStore.basic} />}

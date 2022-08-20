@@ -1,7 +1,6 @@
 import styles from './index.module.scss'
 import { Image } from "@nextui-org/react";
 import { ProjectDataType } from '@/models/projectType';
-import { useEffect } from 'react';
 
 const ProjectImageCard: React.FC<{ project: ProjectDataType[] }> = ({ project }) => {
 
@@ -10,7 +9,8 @@ const ProjectImageCard: React.FC<{ project: ProjectDataType[] }> = ({ project })
       {
           project.map(item => {
             return (
-              <div className={styles.wrapper + ' flex flex-col'} key={item.name}>
+              <div key={item.name} className="flex justify-center">
+                <div className={styles.wrapper + ' flex flex-col'} >
                 <div className={styles.imgWrapper}>
                   <Image
                     className={styles.imgCard}
@@ -32,6 +32,8 @@ const ProjectImageCard: React.FC<{ project: ProjectDataType[] }> = ({ project })
                   <p className="text-center mt-1 lg:mt-0.5 text-xl font-sans">{item.name}</p>
                 </div>
               </div>
+              </div>
+              
             )
           })}
 

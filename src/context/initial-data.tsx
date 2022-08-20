@@ -1,7 +1,6 @@
 import type { FC } from 'react'
 import { createContext, memo} from 'react'
 import { AggregateRoot } from '~/models/aggregate';
-import { useStore } from '../store/index';
 
 export type InitialDataType = {
   aggregateData: AggregateRoot

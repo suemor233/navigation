@@ -3,11 +3,15 @@
   grid-gap: 2em;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   box-sizing: border-box;
- 
 }
 
-
 .wrapper {
+  height: 13em;
+  width: 15em;
+  @media  (max-width: 1096px) {
+    height: 15em;
+    width: 17em;
+  }
   .link {
     transition: all 0.3s ease;
     top: 0;
@@ -17,9 +21,9 @@
     opacity: 0;
     display: flex;
     position: absolute;
-    align-items: center;
     transition: opacity 0.3s;
     justify-content: center;
+    align-items: center;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.4);
     &:hover {
@@ -46,13 +50,9 @@
   .imgWrapper {
     overflow: hidden;
     position: relative;
-    height: 11em;
+    height: 100%;
     box-shadow: 0 0 11px 3px rgb(0 0 0 / 15%);
     border-radius: 10px;
-
-    @media  (max-width: 1096px) {
-      height: 14em;
-    }
     .imgCard {
       top: 0;
       bottom: 0;

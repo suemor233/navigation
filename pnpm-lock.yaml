@@ -5,7 +5,7 @@ overrides:
 
 specifiers:
   '@nextui-org/react': 1.0.0-beta.7
-  '@suemor/eslint-config-ts': ^1.0.1
+  '@suemor/eslint-config-react-ts': ^1.0.1
   '@suemor/prettier': ^1.0.1
   '@types/node': 18.0.6
   '@types/react': 17.0.45
@@ -57,7 +57,7 @@ dependencies:
   umi-request: 1.4.0
 
 devDependencies:
-  '@suemor/eslint-config-ts': 1.0.1_typescript@4.7.4
+  '@suemor/eslint-config-react-ts': 1.0.1
   '@suemor/prettier': 1.0.1
   '@types/node': 18.0.6
   '@types/react': 17.0.45
@@ -1233,6 +1233,20 @@ packages:
     dependencies:
       react: 18.2.0
     dev: false
+
+  /@suemor/eslint-config-react-ts/1.0.1:
+    resolution: {integrity: sha512-1QksuNOP7U4jYkUr2XRbhYMZ749QW+rYJONaK+oqMRvWnZ02JelNc5934w9qFGazmmmy00+ikRNUTnyrzBvA4g==}
+    dependencies:
+      '@suemor/eslint-config-ts': 1.0.1_typescript@4.7.4
+      eslint: 8.20.0
+      eslint-plugin-react: 7.30.1_eslint@8.20.0
+      eslint-plugin-react-hooks: 4.6.0_eslint@8.20.0
+      typescript: 4.7.4
+    transitivePeerDependencies:
+      - eslint-import-resolver-typescript
+      - eslint-import-resolver-webpack
+      - supports-color
+    dev: true
 
   /@suemor/eslint-config-ts/1.0.1_typescript@4.7.4:
     resolution: {integrity: sha512-VS8aDdzu8d5KjnV0MStEGCdaISXwcWBxhCY9qoN77SGU8F37NFr8G5uYYTQK2axr8kyUeRr5AWH3xPkLR3RXfw==}

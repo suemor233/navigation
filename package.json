@@ -38,7 +38,7 @@
     "umi-request": "^1.4.0"
   },
   "devDependencies": {
-    "@suemor/eslint-config-ts": "^1.0.1",
+    "@suemor/eslint-config-react-ts": "^1.0.1",
     "@suemor/prettier": "^1.0.1",
     "@types/node": "18.0.6",
     "@types/react": "17.0.45",

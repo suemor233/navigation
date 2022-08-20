@@ -18,7 +18,7 @@ export const Project = () => {
       <div
         className={
           styles.project +
-          ' transition-all items-center h-full overflow-y-auto animate__animated animate__fadeIn'
+          ' transition-all items-center  overflow-y-auto animate__animated animate__fadeIn'
         }
       >
         {projectStore.project && (

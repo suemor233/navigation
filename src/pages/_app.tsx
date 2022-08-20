@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import { memo, useMemo } from 'react'
 import type { FC } from 'react'
-import { ToastContainer } from 'react-toastify'
 
 import { NextUIProvider } from '@nextui-org/react'
 
