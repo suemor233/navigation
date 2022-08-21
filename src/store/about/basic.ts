@@ -1,32 +1,29 @@
 import { makeAutoObservable, runInAction } from 'mobx'
 
-import { BasicDataType } from '@/models/About'
 import { basicInfo } from '@/api/modules/about'
-import { socketClient } from '~/socket'
+import { BasicDataType } from '@/models/About'
+
 import { SocketKey } from '~/constants/socketKey'
+import { socketClient } from '~/socket'
 import { isClientSide } from '~/utils/env'
+
 export default class BasicStore {
   basic: BasicDataType[] | null = null
 
   constructor() {
     makeAutoObservable(this)
     if (isClientSide()) {
-    this.connectaboutSocket()
+      this.connectaboutSocket()
     }
   }
 
-  async updateabout() {
-    const res = (await basicInfo()) as Record<'data', BasicDataType[]>
-    runInAction(async () => {
-      this.basic = res.data
-    })
+  async updateabout(basic: BasicDataType[]) {
+    this.basic = basic
   }
 
-
   connectaboutSocket() {
-    socketClient.on(SocketKey.ABOUT_BASIC,'关于已更新', res => {
+    socketClient.on(SocketKey.ABOUT_BASIC, '关于已更新', (res) => {
       this.basic = res
     })
   }
-
 }

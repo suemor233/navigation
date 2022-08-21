@@ -17,11 +17,8 @@ export default class ProjectStore {
     }
   }
 
-  async updateProject() {
-    const res = (await projectInfo()) as Record<'data', ProjectDataType[]>
-    if (res) {
-      this.project = res.data
-    }
+  async updateProject(project:ProjectDataType[]) {
+    this.project = project
   }
 
   connectProjectSocket() {

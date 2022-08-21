@@ -7,6 +7,7 @@ import { SocketKey } from '~/constants/socketKey'
 import { socketClient } from '~/socket'
 import { isClientSide } from '~/utils/env'
 
+
 export default class StackStore {
   stack: StackType[] | null = null
 
@@ -17,9 +18,8 @@ export default class StackStore {
     }
   }
 
-  async updateStack() {
-    const res = (await stackInfo()) as Record<'data', StackType[]>
-    this.stack = res.data
+  async updateStack(stack: StackType[]) {
+    this.stack = stack
   }
 
   connectStackSocket() {

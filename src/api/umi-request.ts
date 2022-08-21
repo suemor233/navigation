@@ -42,7 +42,7 @@ client.interceptors.response.use(async (response: any) => {
   if (isClientSide()) {
     qprogress.finish()
   }
-  if (res.ok === 0) {
+  if (res.ok === 0 && isClientSide()) {
     if (Array.isArray(res.message)) {
       notice.error(res.message[0])
     } else {
