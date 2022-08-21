@@ -23,7 +23,7 @@ const Left: FC = () => {
                   return
                 }
                 return (
-                  <a key={item.key} target={'_blank'} href={item.value}>
+                  <a key={item.key} target={'_blank'}  href={item.value} aria-label={item.key}>
                     <Icon id={item.icon} />
                   </a>
                 )
