@@ -1,5 +1,5 @@
 import { aggregateInfo } from '~/api/modules/aggregate'
-import { AggregateRoot } from '~/models/aggregate'
+import type { AggregateRoot } from '~/models/aggregate'
 
 export async function fetchInitialData(): Promise<AggregateRoot> {
   const [aggregateDataState] = await Promise.allSettled([aggregateInfo()])

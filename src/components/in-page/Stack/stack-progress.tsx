@@ -1,4 +1,4 @@
-import { StackType } from '@/models/StackType'
+import type { StackType } from '@/models/StackType'
 import { Progress } from '@nextui-org/react'
 
 type NormalColors = 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'gradient'

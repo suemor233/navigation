@@ -1,7 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 
-import { stackInfo } from '@/api/modules/stack'
-import { StackType } from '@/models/StackType'
+import type { StackType } from '@/models/StackType'
 
 import { SocketKey } from '~/constants/socketKey'
 import { socketClient } from '~/socket'

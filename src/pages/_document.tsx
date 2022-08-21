@@ -19,7 +19,7 @@ class MyDocument extends Document {
        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <Head>{CssBaseline.flush()}</Head>
         <body>
-          <script src="https://at.alicdn.com/t/font_3391495_6hi3rnhcf1p.js"></script>
+          <script src="https://at.alicdn.com/t/font_3391495_6hi3rnhcf1p.js" />
           <Main />
           <NextScript />
         </body>

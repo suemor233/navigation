@@ -2,7 +2,7 @@ import type { Socket } from 'socket.io-client'
 import { io } from 'socket.io-client'
 
 import { GATEWAY_URL } from '~/constants/env'
-import { SocketKey } from '~/constants/socketKey'
+import type { SocketKey } from '~/constants/socketKey'
 import { notice } from '~/utils/notice'
 
 export class SocketClient {

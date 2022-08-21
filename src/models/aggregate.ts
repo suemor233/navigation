@@ -1,5 +1,5 @@
-import { BasicDataType, DetailDataType } from "./About";
-import { UserModel } from "./User";
+import type { BasicDataType, DetailDataType } from "./About";
+import type { UserModel } from "./User";
 
 export interface AggregateRoot {
   user: UserModel;

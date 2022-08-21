@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { useEffect , useState } from 'react'
+
 import styles from './index.module.scss'
-import { useRouter } from 'next/router';
 
 type tabsType = Array<[string, string, boolean]>
 
@@ -9,7 +9,7 @@ const Sidebar: React.FC = () => {
   const [tabs, setTabs] = useState<tabsType>([
     ['关于', '/about', false],
     ['项目', '/project', false],
-    ['技术栈', '/stack', false]
+    ['技术栈', '/stack', false],
   ])
   const location = useRouter()
   useEffect(() => {
@@ -21,38 +21,44 @@ const Sidebar: React.FC = () => {
           return [item[0], item[1], true]
         }
         return [item[0], item[1], false]
-      })
+      }),
     )
   }, [location])
 
-  const handleSelecated = (e: React.MouseEvent, tab: [string, string, boolean]) => {
+  const handleSelecated = (
+    e: React.MouseEvent,
+    tab: [string, string, boolean],
+  ) => {
     if (location.pathname !== tab[1]) {
       location.push(tab[1])
       setTabs(
-        tabs.map(item => {
+        tabs.map((item) => {
           if (item[0] === tab[0]) {
             return [item[0], item[1], true]
           }
           return [item[0], item[1], false]
-        })
+        }),
       )
     }
   }
   return (
     <>
       <div className="flex justify-around w-full text-xl px-12 ">
-        {tabs.map(key => {
+        {tabs.map((key) => {
           return (
             <button
-              onClick={e => handleSelecated(e, key)}
+              onClick={(e) => handleSelecated(e, key)}
+              className={`${styles.btn} ${key[2] ? styles.selected : ''}`}
               key={key[0]}
-              className={styles.btn + ' ' + (key[2] ? styles.selected : '')}
+              aria-required="true"
+              aria-label={'sefwe'}
             >
               {key[0]}
             </button>
           )
         })}
       </div>
+
       <div className={styles.fg} />
     </>
   )

@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import type { NextPage } from 'next'
-import { ReactElement, useEffect } from 'react'
+import type { ReactElement} from 'react';
+import { useEffect } from 'react'
 
 import { useStore } from '@/store'
 
@@ -21,7 +22,7 @@ export const Stack: NextPage<Record<'stack', StackType[]>> = (props) => {
   )
 }
 
-//@ts-ignore
+// @ts-ignore
 Stack.getLayout = function getLayout(page: ReactElement) {
   return <CardContent>{page}</CardContent>
 }

@@ -2,11 +2,11 @@ import { makeAutoObservable, runInAction } from 'mobx'
 
 import { socialBottomKeyMap, socialKeyMap } from '~/constants/social'
 import { SocketKey } from '~/constants/socketKey'
-import {
+import type {
   InformationConfigType,
   SocialDetailType,
 } from '~/models/InformationConfigType'
-import { SocialType, UserModel } from '~/models/User'
+import type { SocialType, UserModel } from '~/models/User'
 import { socketClient } from '~/socket'
 import { isClientSide } from '~/utils/env'
 
@@ -46,7 +46,7 @@ export default class UserStore {
         }
       })
       this.master = model as any
-      //@ts-ignore
+      // @ts-ignore
       this.master.socialIds = socialIds as any
     })
   }

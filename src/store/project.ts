@@ -1,7 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 
-import { projectInfo } from '@/api/modules/project'
-import { ProjectDataType } from '@/models/projectType'
+import type { ProjectDataType } from '@/models/projectType'
 
 import { SocketKey } from '~/constants/socketKey'
 import { socketClient } from '~/socket'

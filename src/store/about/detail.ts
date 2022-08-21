@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 
-import { DetailDataType } from '@/models/About'
+import type { DetailDataType } from '@/models/About'
 
 import { SocketKey } from '~/constants/socketKey'
 import { socketClient } from '~/socket'

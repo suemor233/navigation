@@ -31,7 +31,7 @@ export const About: NextPage<Iprops> = (props) => {
   )
 }
 
-//@ts-ignore
+// @ts-ignore
 About.getLayout = function getLayout(page: ReactElement) {
   return <CardContent>{page}</CardContent>
 }

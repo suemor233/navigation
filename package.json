@@ -10,7 +10,7 @@
     "dev": "cross-env NODE_ENV=development next dev -p 2334",
     "build": "cross-env NODE_ENV=production next build",
     "start": "npm run dev",
-    "lint": "next lint",
+    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore . --fix",
     "prod:pm2": "cross-env NODE_ENV=production pm2 restart ecosystem.config.js",
     "prod:pm2-alone": "cross-env NODE_ENV=production pm2 restart ecosystem.standalone.config.js",
     "prod:stop": "pm2 stop ecosystem.config.js",

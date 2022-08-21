@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import { FC, useEffect } from 'react'
+import type { FC} from 'react';
 
 import { useStore } from '~/store'
 
@@ -13,11 +13,11 @@ export const CardContent: FC = observer(({ children }) => {
     <>
       <div
         className={
-          styles['card'] +
-          ' flex h-[40em] w-[70em] tablet:w-[60em] phone:h-auto phone:w-screen phone:flex-col flex-row bg-white rounded-2xl transition-all duration-400 transform' +
-          (!appStore.viewport.mobile
+          `${styles['card'] 
+          } flex h-[40em] w-[70em] tablet:w-[60em] phone:h-auto phone:w-screen phone:flex-col flex-row bg-white rounded-2xl transition-all duration-400 transform${ 
+          !appStore.viewport.mobile
             ? ' animate__animated animate__rollIn'
-            : '')
+            : ''}`
         }
       >
         <Left />

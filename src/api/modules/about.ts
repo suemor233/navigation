@@ -1,6 +1,6 @@
 import client from '~/api/umi-request'
-import { BasicDataType, DetailDataType } from '~/models/About'
-import { PageType } from '../../models/Page';
+import type { BasicDataType, DetailDataType } from '~/models/About'
+import type { PageType } from '../../models/Page';
 
 export function basicInfo() {
   return client.get('/about/basic')

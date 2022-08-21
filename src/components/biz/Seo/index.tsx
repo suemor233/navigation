@@ -29,7 +29,7 @@ export const SEO: FC<SEOProps> = observer((props) => {
             },
             type: 'article',
             locale: 'zh-cn',
-            site_name: userStore.username + '引导页',
+            site_name: `${userStore.username}引导页`,
             description:
               userStore.introduce || '',
             title: Title,

@@ -1,4 +1,4 @@
-import { BasicDataType, DetailDataType } from "./About"
+import type { BasicDataType, DetailDataType } from "./About"
 
 export interface InformationConfigType {
   static:boolean

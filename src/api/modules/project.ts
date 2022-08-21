@@ -1,5 +1,5 @@
 import client from "@/api/umi-request";
-import { ProjectDataType } from "@/models/projectType";
+import type { ProjectDataType } from "@/models/projectType";
 
 
 

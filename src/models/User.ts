@@ -1,4 +1,4 @@
-import { BaseModel } from "./Base"
+import type { BaseModel } from "./Base"
 
 export interface UserModel extends BaseModel  {
   username:string,

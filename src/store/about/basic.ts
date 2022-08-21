@@ -1,7 +1,6 @@
-import { makeAutoObservable, runInAction } from 'mobx'
+import { makeAutoObservable } from 'mobx'
 
-import { basicInfo } from '@/api/modules/about'
-import { BasicDataType } from '@/models/About'
+import type { BasicDataType } from '@/models/About'
 
 import { SocketKey } from '~/constants/socketKey'
 import { socketClient } from '~/socket'

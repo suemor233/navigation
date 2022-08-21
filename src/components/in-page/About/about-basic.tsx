@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { BasicDataType } from '@/models/About'
+import type { BasicDataType } from '@/models/About'
 
 const AboutBasic: React.FC<{ aboutData: BasicDataType[] }> = ({
   aboutData,

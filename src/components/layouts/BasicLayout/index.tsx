@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import { FC } from 'react'
+import type { FC } from 'react'
 import { ToastContainer } from 'react-toastify'
 
 import { useStore } from '~/store'
