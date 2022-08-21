@@ -4,12 +4,15 @@ import { BasicDataType } from '@/models/About'
 import { basicInfo } from '@/api/modules/about'
 import { socketClient } from '~/socket'
 import { SocketKey } from '~/constants/socketKey'
+import { isClientSide } from '~/utils/env'
 export default class BasicStore {
   basic: BasicDataType[] | null = null
 
   constructor() {
     makeAutoObservable(this)
+    if (isClientSide()) {
     this.connectaboutSocket()
+    }
   }
 
   async updateabout() {

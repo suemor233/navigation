@@ -4,12 +4,15 @@ import { detailInfo } from '@/api/modules/about'
 import { DetailDataType } from '@/models/About'
 import { socketClient } from '~/socket'
 import { SocketKey } from '~/constants/socketKey'
+import { isClientSide } from '~/utils/env'
 export default class DetailStore {
   detail: DetailDataType[] | null = null
 
   constructor() {
     makeAutoObservable(this)
+    if (isClientSide()) {
     this.connectaboutSocket()
+    }
   }
 
   async updateabout() {

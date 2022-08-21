@@ -2,14 +2,11 @@ import { observer } from 'mobx-react-lite'
 import { ReactElement, useEffect } from 'react'
 
 import { CardContent } from '~/components/layouts/BasicLayout/CardContent'
-import { useStore } from '@/store'
+import { store, useStore } from '@/store'
 import StackProgress from '~/components/in-page/Stack/stack-progress'
 
 export const Stack = () => {
   const {stackStore} = useStore()
-  useEffect(() => {
-    stackStore.updateStack()
-  }, [])
   return (
     <div className="flex flex-col overflow-y-auto p-2 animate__animated animate__fadeIn phone:pb-10">
       {
@@ -20,6 +17,7 @@ export const Stack = () => {
 }
 
 Stack.getLayout = function getLayout(page: ReactElement) {
+  store.stackStore.updateStack()
   return <CardContent>{page}</CardContent>
 }
 

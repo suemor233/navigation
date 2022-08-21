@@ -1,17 +1,15 @@
-import { ReactElement } from 'react'
 import { observer } from 'mobx-react-lite'
-import { CardContent } from '~/components/layouts/BasicLayout/CardContent'
-import { useStore } from '~/store'
+import { ReactElement } from 'react'
+
 import AboutBasic from '~/components/in-page/About/about-basic'
 import AboutDetail from '~/components/in-page/About/about-detail'
-import { useEffect } from 'react';
+import { CardContent } from '~/components/layouts/BasicLayout/CardContent'
+import { store } from '~/context/root-store'
+import { useStore } from '~/store'
 
 export const About = () => {
-  const { appStore,basicStore,detailStore } = useStore()
-  useEffect(()=>{
-    basicStore.updateabout()
-    detailStore.updateabout()
-  },[])
+  const { appStore, basicStore, detailStore } = useStore()
+
   return (
     <>
       <div
@@ -26,6 +24,8 @@ export const About = () => {
 }
 
 About.getLayout = function getLayout(page: ReactElement) {
+  store.basicStore.updateabout()
+  store.detailStore.updateabout()
   return <CardContent>{page}</CardContent>
 }
 

@@ -12,7 +12,7 @@ import { Content } from '~/components/layouts/AppLayout'
 import { BasicLayout } from '~/components/layouts/BasicLayout'
 import { NoDataErrorView } from '~/components/universal/Error/no-data'
 import { InitialContextProvider } from '~/context/initial-data'
-import { RootStoreProvider } from '~/context/root-store'
+import { RootStoreProvider, store } from '~/context/root-store'
 import { AggregateRoot } from '~/models/aggregate'
 import { fetchInitialData } from '~/utils/app'
 

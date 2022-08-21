@@ -8,7 +8,7 @@ import {
 } from '~/models/InformationConfigType'
 import { SocialType, UserModel } from '~/models/User'
 import { socketClient } from '~/socket'
-import { notice } from '~/utils/notice'
+import { isClientSide } from '~/utils/env'
 
 export interface UserResType
   extends Pick<
@@ -21,10 +21,14 @@ export interface UserResType
 export default class UserStore {
   constructor() {
     makeAutoObservable(this)
-    this.connectUserSocket()
+    if (isClientSide()) {
+      this.connectUserSocket()
+    }
   }
   master: Partial<UserModel> | null = null
-  setUser(model: (Omit<UserModel,'socialIds'> & {socialIds:SocialType[]}) | any) {
+  setUser(
+    model: (Omit<UserModel, 'socialIds'> & { socialIds: SocialType[] }) | any,
+  ) {
     const _master = model
     runInAction(() => {
       const socialIds: Record<string, SocialDetailType[]> = {
@@ -44,7 +48,6 @@ export default class UserStore {
       this.master = model as any
       //@ts-ignore
       this.master.socialIds = socialIds as any
-
     })
   }
 
@@ -57,7 +60,7 @@ export default class UserStore {
   }
 
   connectUserSocket() {
-    socketClient.on(SocketKey.USER_UPDATE,'基本信息已更新', (res) => {
+    socketClient.on(SocketKey.USER_UPDATE, '基本信息已更新', (res) => {
       this.setUser(res)
     })
   }

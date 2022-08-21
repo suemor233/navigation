@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import { ReactElement, useEffect } from 'react'
 
-import { useStore } from '@/store'
+import { store, useStore } from '@/store'
 
 import ProjectImageCard from '~/components/in-page/Project/project-card'
 import { CardContent } from '~/components/layouts/BasicLayout/CardContent'
@@ -10,9 +10,7 @@ import styles from './index.module.scss'
 
 export const Project = () => {
   const { projectStore } = useStore()
-  useEffect(() => {
-    projectStore.updateProject()
-  }, [])
+
   return (
     <>
       <div
@@ -30,6 +28,7 @@ export const Project = () => {
 }
 
 Project.getLayout = function getLayout(page: ReactElement) {
+  store.projectStore.updateProject()
   return <CardContent>{page}</CardContent>
 }
 

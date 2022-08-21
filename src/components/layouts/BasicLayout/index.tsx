@@ -3,7 +3,6 @@ import { FC } from 'react'
 import { ToastContainer } from 'react-toastify'
 
 import { useStore } from '~/store'
-import { isClientSide } from '~/utils/env'
 
 import { useInitialData } from '../../../hooks/use-initial-data'
 

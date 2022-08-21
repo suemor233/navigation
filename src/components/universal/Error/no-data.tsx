@@ -3,6 +3,7 @@ import { FC } from 'react'
 import { API_URL } from '~/constants/env'
 
 import { ErrorView } from '.'
+import styles from './index.module.scss'
 
 export const NoDataErrorView: FC = () => {
   return (
@@ -19,12 +20,7 @@ export const NoDataErrorView: FC = () => {
         }
       />
 
-      <div
-        className="absolute opacity-20 blur-15 filter inset-0 bg-center bg-cover"
-        style={{
-          backgroundImage: `url("https://fastly.jsdelivr.net/gh/suemor233/static@main/img/na-data-error-bg.jpg")`,
-        }}
-      />
+      <div className={styles.bg} />
     </>
   )
 }
