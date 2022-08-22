@@ -4,11 +4,9 @@
   transition: all 0.1s ease;
   padding: 0.4em 2em;
 
-  @media  (max-width: 1007px) {
-    padding: 0.4em 1.5em;
-  }
-  @media  (max-width: 767px) {
-    padding: 0.4em .5em;
+
+  @media  (max-width: 804px) {
+    padding: 0.4em 1em;
   }
   &:hover {
     color: #000;

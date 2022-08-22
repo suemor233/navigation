@@ -8,9 +8,9 @@
 .wrapper {
   height: 13em;
   width: 15em;
-  @media  (max-width: 1096px) {
-    height: 15em;
-    width: 17em;
+  @media  (max-width: 804px) {
+    height: 16em;
+    width: 20em;
   }
   .link {
     transition: all 0.3s ease;

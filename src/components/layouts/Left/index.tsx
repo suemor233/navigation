@@ -10,7 +10,7 @@ const Left: FC = () => {
   return (
     <>
       <div className="relative h-full phone:h-auto flex phone:w-full">
-        <div className={`${styles['card']} p-14 flex justify-center items-center h-full phone:w-full`}>
+        <div className={`${styles['card']} p-14 phone:p-6 flex justify-center items-center h-full phone:w-full`}>
           <div className="mb-4">
             <Avatar src={userStore.master?.avatar} bordered css={{ size: '10em', margin: 'auto' }} alt={userStore.master?.username}/>
             <div className="text-center">

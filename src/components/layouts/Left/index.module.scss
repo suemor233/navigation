@@ -7,9 +7,9 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 1em;
-    @media  (max-width: 767px) {
+    @media  (max-width: 804px) {
       bottom:auto;
-      padding: 1em 2em;
+      @apply px-5 mb-5
     }
 
     }

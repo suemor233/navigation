@@ -43,7 +43,7 @@ const Sidebar: React.FC = () => {
   }
   return (
     <>
-      <div className="flex justify-around w-full text-xl px-12 ">
+      <div className="flex justify-around w-full text-xl px-12 phone:px-0">
         {tabs.map((key) => {
           return (
             <button
