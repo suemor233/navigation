@@ -38,8 +38,6 @@ About.getLayout = function getLayout(page: ReactElement) {
 
 export async function getServerSideProps() {
   const [basic, detail] = await Promise.all([basicInfo(), detailInfo()])
-  console.log(basic, detail)
-
   return {
     props: {
       basic: basic.data,
