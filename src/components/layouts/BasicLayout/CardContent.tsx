@@ -21,7 +21,7 @@ export const CardContent: FC = observer(({ children }) => {
         }
       >
         <Left />
-        <div className="flex-1 flex flex-col px-5 h-full">
+        <div className="flex-1 flex flex-col px-5 h-full mb-10">
           <div className="flex flex-col my-6">
             <Sidebar />
           </div>
