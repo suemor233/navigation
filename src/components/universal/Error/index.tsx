@@ -10,7 +10,7 @@ export const ErrorView: NextPage<{
         <h1 className="border-r-1 phone:border-none border-gray-3 px-6 py-3 mr-6">
           {statusCode}
         </h1>
-        <div className="leading-[49px]">{description}</div>
+        <div>{description}</div>
       </div>
     </>
   )
