@@ -51,7 +51,7 @@ const Sidebar: React.FC = () => {
               className={`${styles.btn} ${key[2] ? styles.selected : ''}`}
               key={key[0]}
               aria-required="true"
-              aria-label={'sefwe'}
+              aria-label={key[0]}
             >
               {key[0]}
             </button>
