@@ -50,8 +50,6 @@ const Sidebar: React.FC = () => {
               onClick={(e) => handleSelecated(e, key)}
               className={`${styles.btn} ${key[2] ? styles.selected : ''}`}
               key={key[0]}
-              aria-required="true"
-              aria-label={key[0]}
             >
               {key[0]}
             </button>
