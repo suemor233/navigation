@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import type { NextPage } from 'next'
-import type { ReactElement} from 'react';
+import type { ReactElement } from 'react'
 import { useEffect } from 'react'
 
 import { useStore } from '@/store'
@@ -28,11 +28,17 @@ Stack.getLayout = function getLayout(page: ReactElement) {
 }
 
 export async function getServerSideProps() {
-  const { data } = await stackInfo()
-  return {
-    props: {
-      stack:data,
-    },
+  try {
+    const { data } = await stackInfo()
+    return {
+      props: {
+        stack: data,
+      },
+    }
+  } catch (error) {
+    return {
+      props: {},
+    }
   }
 }
 

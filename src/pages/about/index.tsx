@@ -7,6 +7,7 @@ import { basicInfo, detailInfo } from '~/api/modules/about'
 import AboutBasic from '~/components/in-page/About/about-basic'
 import AboutDetail from '~/components/in-page/About/about-detail'
 import { CardContent } from '~/components/layouts/BasicLayout/CardContent'
+import { NoDataErrorView } from '~/components/universal/Error/no-data'
 import type { BasicDataType, DetailDataType } from '~/models/About'
 import { useStore } from '~/store'
 
@@ -37,13 +38,22 @@ About.getLayout = function getLayout(page: ReactElement) {
 }
 
 export async function getServerSideProps() {
-  const [basic, detail] = await Promise.all([basicInfo(), detailInfo()])
-  return {
-    props: {
-      basic: basic.data,
-      detail: detail.data,
-    },
+  try {
+    const [basic, detail] = await Promise.all([basicInfo(), detailInfo()])
+    return {
+      props: {
+        basic: basic.data ,
+        detail: detail.data,
+      },
+    }
+  } catch (error) {
+    return {
+      props: {
+
+      }
+    }
   }
+
 }
 
 export default observer(About)

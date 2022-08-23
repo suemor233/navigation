@@ -24,6 +24,7 @@ const App: FC<DataModel & { Component: any; pageProps: any; err: any }> = (
 ) => {
   const { initData, Component, pageProps } = props
   const getLayout = Component.getLayout ?? ((page) => page)
+
   const Inner = useMemo(() => {
     return initData.aggregateData ? (
       <Wrapper>{getLayout(<Component {...pageProps} />)}</Wrapper>
