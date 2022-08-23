@@ -18,7 +18,7 @@ const ProjectImageCard: React.FC<{ project: ProjectDataType[] }> = ({
                 alt={item.name}
                 width={'100%'}
                 height={'100%'}
-                objectFit={'cover'}
+                objectFit={'fill'}
               />
               {item.url && (
                 <div className={styles.link}>
