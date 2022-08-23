@@ -10,7 +10,7 @@
   grid-template-columns: repeat(auto-fill, minmax(15em, 16em));
   box-sizing: border-box;
   justify-content: center;
-  @media (max-width: 804px) {
+  @media (max-width: 505px) {
     grid-template-rows: repeat(auto-fill, 13em);
     grid-template-columns: repeat(auto-fill, 20em);
   }
