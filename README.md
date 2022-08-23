@@ -16,4 +16,5 @@
 <img src="https://fastly.jsdelivr.net/gh/suemor233/static@main/img/nav1.jpg" width="1000" alt="about" />
 <img src="https://fastly.jsdelivr.net/gh/suemor233/static@main/img/nav2.jpg" width="1000" alt="project" />
 <img src="https://fastly.jsdelivr.net/gh/suemor233/static@main/img/nav3.jpg" width="1000" alt="stack" />
+<img src="https://fastly.jsdelivr.net/gh/suemor233/static@main/img/nav4.jpg" width="1000" alt="errorPage" />
 </p>
